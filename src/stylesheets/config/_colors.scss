@@ -1,10 +1,12 @@
 // Color variables
 
-$acqua-green: #20A39E;
-$navy-blue: #101C21;
-$off-white: #DBC6B8;
+$dark-green: #101C21;
+$almond: #E6D2B8;
+$light-almond: #F3E7D6;
+$white: #ffffff;
+$brick-red: #BA3C25;
 
 body {
-  background-color: $navy-blue;
-  color: $off-white;
+  color: $dark-green;
+  background-color: $white;
 }
