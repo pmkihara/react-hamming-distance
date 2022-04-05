@@ -1,15 +1,16 @@
 import React from 'react';
+import NumberRow from './NumberRow'
 
 class NumberList extends React.Component {
   render() {
     return (
-      <div className="col-12 col-md-4 col-lg-3 grid-3">
-        <div className="grid-row">
+      <div className="col-12 col-md-5 grid-table">
+        <div className="grid-row-3 grid-header">
           <span>First Number</span>
           <span>Second Number</span>
           <span>Hamming Distance</span>
         </div>
-          {this.props.numbers}
+          {this.props.sets.map((set, index) =><NumberRow key={index} set={set}></NumberRow>)}
       </div>
     );
   }
