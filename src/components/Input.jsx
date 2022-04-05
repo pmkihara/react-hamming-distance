@@ -16,7 +16,7 @@ class Input extends React.Component {
 
   render() {
     return (
-      <input type="text" className="w-100" onChange={this.handleInput} />
+      <textarea className="w-100" onChange={this.handleInput} />
     );
   }
 }
