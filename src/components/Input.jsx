@@ -10,13 +10,18 @@ class Input extends React.Component {
   handleInput = (event) => {
     const inputField = event.target;
     const value = event.target.value;
+    const maskedValue = this.maskInput(value)
 
-    inputField.value = this.maskInput(value);
+    inputField.value = maskedValue;
+
+    this.props.numbersFunction(maskedValue)
   }
 
   render() {
     return (
-      <textarea className="w-100" onChange={this.handleInput} />
+      <div className="input">
+        <textarea className="banner-input" placeholder="Input your numbers" onChange={this.handleInput} />
+      </div>
     );
   }
 }

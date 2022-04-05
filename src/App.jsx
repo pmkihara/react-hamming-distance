@@ -2,45 +2,58 @@ import React from 'react';
 import './stylesheets/App.scss';
 
 // Component imports
-import Input from './components/Input'
-import NumberList from './components/NumberList'
+import Banner from './components/Banner';
+import Charts from './components/Charts';
+import NumberList from './components/NumberList';
+
+// Function imports
+import hammingDistance from './hamming_distance';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      numbers: [12345, 43423, 22132]
-    }
+      numbers: [],
+      pairsWithDistance: []
+    };
+  }
+
+  pairNumbers = (orderedNumbers) => {
+    // Prepare the pairs of numbers to calculate the Hamming distance
+    const numberPairs = [];
+    orderedNumbers.forEach((number, index) => {
+      if(number !== orderedNumbers[0]) {
+        numberPairs.push([orderedNumbers[index - 1], number, hammingDistance([orderedNumbers[index - 1], number])])
+      }
+    })
+    return numberPairs
   }
 
   prepareNumbers = (string) => {
-    // Prepare numbers for the Hamming distance algorithm:
     // - Split the string from the input by the spaces added by the mask;
     // - Select only the strings with exactly 5 digits;
-    // - Convert the strings to Integers;
-    // -Sort the numbers in crescent order.
-    const orderedNumbers = string.split(' ').filter(number => number.length === 5).map((number) => Number.parseInt(number)).sort()
+    // - Sort the numbers
+    const orderedNumbers = string.split(' ').filter(number => number.length === 5).sort()
 
-    this.setState({
-      numbers: orderedNumbers
-    })
+    // Sets the newly formed pairs as the numbers state if a new pair has been created
+    if(orderedNumbers[1] && orderedNumbers.toString() !== this.state.numbers.toString()) {
+      const numberPairs = this.pairNumbers(orderedNumbers);
+      this.setState({
+        numbers: orderedNumbers,
+        pairsWithDistance: numberPairs
+      })
+    }
   }
 
   render() {
     return (
       <div className="App">
-        <h1 className="text-center">Hamming Distance Calculator</h1>
+        <Banner title="Hamming Distance Calculator" numbersFunction={this.prepareNumbers}></Banner>
         <div className="container p-5">
-          <div className="text-start mb-5">
-            <h3>Write your input here</h3>
-            <Input></Input>
-          </div>
           <div className="row">
-              <NumberList numbers={this.state.numbers}></NumberList>
-            <div className="col-12 col-md-8 col-lg-9">
-              ksdfjhskdjhf
-            </div>
+            <NumberList sets={this.state.pairsWithDistance}></NumberList>
+            <Charts sets={this.state.pairsWithDistance}></Charts>
           </div>
         </div>
       </div>
