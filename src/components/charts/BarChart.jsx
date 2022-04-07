@@ -34,6 +34,12 @@ class BarChart extends React.Component {
       x: {
         display: false
       }
+    },
+    plugins: {
+      title: {
+        display: true,
+        text: 'Bar Chart',
+      },
     }
   };
 
