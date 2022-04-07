@@ -26,10 +26,19 @@ class RadarChart extends React.Component {
     borderColor: 'rgb(186, 60, 37)',
     borderWidth: 1,
     scales: {
-      y: {
+      r: {
         ticks: {
             precision: 0
+        },
+        pointLabels: {
+          display: false
         }
+      },
+    },
+    plugins: {
+      title: {
+        display: true,
+        text: 'Radar Chart',
       },
     }
   };
