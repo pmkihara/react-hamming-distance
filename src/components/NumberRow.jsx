@@ -6,7 +6,7 @@ class NumberRow extends React.Component {
       <div className="grid-row-3 grid-body">
         <span>{this.props.set[0]}</span>
         <span>{this.props.set[1]}</span>
-        <span>{this.props.set[2]}</span>
+        <span><strong>{this.props.set[2]}</strong></span>
       </div>
     );
   }
