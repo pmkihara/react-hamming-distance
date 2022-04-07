@@ -11,7 +11,6 @@ class Charts extends React.Component {
       datasets: [
         {
           data: sets.map(set => set[2]),
-
         }
       ]
     }
