@@ -1,0 +1,53 @@
+// Color variables
+$almond: #E6D2B8;
+$brick-red: #D5573B;
+$dark-green: #142929;
+$light-almond: #F3E7D6;
+$white: #ffffff;
+
+body {
+  color: $dark-green;
+  background-color: $white;
+}
+
+// Firefox
+* {
+  scrollbar-width: auto;
+  scrollbar-color: $light-almond;
+}
+
+// Chrome, Edge, and Safari
+*::-webkit-scrollbar {
+  background: transparent;
+  width: 16px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: $light-almond;
+  border-radius: 10px;
+}
+
+a {
+  color: $brick-red;
+  text-decoration: none;
+  font-weight: bolder;
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 5px;
+    background-color: $brick-red;
+    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+  &:hover {
+    color: $brick-red;
+    &::before {
+      left: 0;
+      right: auto;
+      width: 100%;
+    }
+  }
+}
