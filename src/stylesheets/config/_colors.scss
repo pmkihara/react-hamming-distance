@@ -1,12 +1,28 @@
 // Color variables
-
-$dark-green: #101C21;
 $almond: #E6D2B8;
+$brick-red: #BA3C25;
+$dark-green: #101C21;
 $light-almond: #F3E7D6;
 $white: #ffffff;
-$brick-red: #BA3C25;
 
 body {
   color: $dark-green;
   background-color: $white;
+}
+
+// Firefox
+* {
+  scrollbar-width: auto;
+  scrollbar-color: $light-almond;
+}
+
+// Chrome, Edge, and Safari
+*::-webkit-scrollbar {
+  background: transparent;
+  width: 16px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: $light-almond;
+  border-radius: 10px;
 }

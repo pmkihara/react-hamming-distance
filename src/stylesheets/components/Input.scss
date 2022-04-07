@@ -1,0 +1,29 @@
+.input {
+  background: $dark-green;
+  color: $white;
+  padding: 2rem;
+  position: absolute;
+  bottom: -3.5rem;
+  border-radius: 2rem;
+}
+
+textarea {
+  background: $dark-green;
+  color: $white;
+  border: none;
+  font-size: 0.9rem;
+  height: 6rem;
+  width: calc(90vw - 4rem);
+  resize: none;
+  &:focus, &:focus-visible {
+    border: none;
+    box-shadow: none;
+    outline: none;
+  }
+}
+
+@media (min-width: $small) {
+  textarea {
+    width: 36rem;
+  }
+}
