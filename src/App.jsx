@@ -30,14 +30,9 @@ class App extends React.Component {
     return numberPairs
   }
 
-  prepareNumbers = (string) => {
-    // - Split the string from the input by the spaces added by the mask;
-    // - Select only the strings with exactly 5 digits;
-    // - Sort the numbers
-    const orderedNumbers = string.split(' ').filter(number => number.length === 5).sort()
-
-    // Sets the newly formed pairs as the numbers state if a new pair has been created
+  prepareNumbers = (orderedNumbers) => {
     if(orderedNumbers[1] && orderedNumbers.toString() !== this.state.numbers.toString()) {
+      // Sets the newly formed pairs as the numbers state if a new pair has been created
       const numberPairs = this.pairNumbers(orderedNumbers);
       this.setState({
         numbers: orderedNumbers,
