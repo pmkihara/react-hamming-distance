@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Hamming Distance Calculator",
+  "name": "Calculate the Hamming distance between numbers of 5 digits",
   "icons": [
     {
       "src": "favicon.ico",
