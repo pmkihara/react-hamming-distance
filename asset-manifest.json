@@ -1,15 +1,13 @@
 {
   "files": {
-    "main.css": "/react-hamming-distance/static/css/main.535be75f.css",
-    "main.js": "/react-hamming-distance/static/js/main.243c3770.js",
-    "static/js/787.bcfdd92f.chunk.js": "/react-hamming-distance/static/js/787.bcfdd92f.chunk.js",
+    "main.css": "/react-hamming-distance/static/css/main.a162716e.css",
+    "main.js": "/react-hamming-distance/static/js/main.e3549281.js",
     "index.html": "/react-hamming-distance/index.html",
-    "main.535be75f.css.map": "/react-hamming-distance/static/css/main.535be75f.css.map",
-    "main.243c3770.js.map": "/react-hamming-distance/static/js/main.243c3770.js.map",
-    "787.bcfdd92f.chunk.js.map": "/react-hamming-distance/static/js/787.bcfdd92f.chunk.js.map"
+    "main.a162716e.css.map": "/react-hamming-distance/static/css/main.a162716e.css.map",
+    "main.e3549281.js.map": "/react-hamming-distance/static/js/main.e3549281.js.map"
   },
   "entrypoints": [
-    "static/css/main.535be75f.css",
-    "static/js/main.243c3770.js"
+    "static/css/main.a162716e.css",
+    "static/js/main.e3549281.js"
   ]
 }
